@@ -7,12 +7,23 @@
 
   "browser_action": {
     "default_icon": "resources/icon.png",
-    "default_popup": "index.html",
     "default_title": "Blur! Prevent potential-spoiler information from IMDB"
   },
-  "background": {
-    "scripts": ["js/background.js"]
-  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*"
+      ],
+      "css": [
+        "./css/core.css"
+      ],
+      "js": [
+        "./js/core.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ],
   "permissions": [
     "webNavigation",
     "*://*/*"
