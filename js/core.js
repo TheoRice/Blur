@@ -13,13 +13,13 @@ function afterDOMLoaded() {
     var epCredits = document.getElementsByClassName("credit");
     for (i = 0; i < epCredits.length; i++) {
         epCredits[i].style.color = "transparent";
-        epCredits[i].style.textShadow = "0 0 3px rgba(0, 0, 0, 0.3)";
+        epCredits[i].style.textShadow = "0 0 5px rgba(0, 0, 0, 0.5)";
         epCredits[i].classList.add(DEFAULT);
     };
     var episodes = document.getElementsByClassName("toggle-episodes");
     for (i = 0; i < episodes.length; i++) {
         episodes[i].style.color = "transparent";
-        episodes[i].style.textShadow = "0 0 3px rgba(0, 0, 0, 0.3)";
+        episodes[i].style.textShadow = "0 0 5px rgba(0, 0, 0, 0.5)";
         episodes[i].classList.add(DEFAULT);
     };
     var actorEps = document.getElementsByClassName("filmo-episodes");
@@ -32,14 +32,14 @@ function afterDOMLoaded() {
     document.addEventListener('mousemove', function (e) {
         var srcElement = e.srcElement || e.target;
         console.log(srcElement);
-        if ((prevDOM.className == "toggle-episodes blr_unblurred" && srcElement.className != "toggle-episodes blr_unblurred") ||
-            (prevDOM.className == "credit blr_unblurred" && srcElement.className != "credit blr_unblurred")) {
+        if ((prevDOM.className === "toggle-episodes blr_unblurred" && srcElement.className !== "toggle-episodes blr_unblurred") ||
+            (prevDOM.className === "credit blr_unblurred" && srcElement.className !== "credit blr_unblurred")) {
             prevDOM.classList.remove(UNBLURRED);
             prevDOM.classList.add(DEFAULT);
             prevDOM.style.color = "transparent";
-            prevDom.style.textShadow = "0 0 3px rgba(0, 0, 0, 0.3)";
+            prevDom.style.textShadow = "0 0 5px rgba(0, 0, 0, 0.5)";
         }
-        if (srcElement.className == 'credit blr_blurred' || srcElement.className == 'toggle-episodes blr_blurred') {
+        if (srcElement.className === 'credit blr_blurred' || srcElement.className === 'toggle-episodes blr_blurred') {
             srcElement.classList.remove(DEFAULT);
             srcElement.classList.add(UNBLURRED);
             srcElement.style.color = "";

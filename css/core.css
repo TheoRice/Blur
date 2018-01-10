@@ -5,12 +5,12 @@
 
 .blr_blurred {
   color: transparent;
-  text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   
 }
 
 .blr_blurred a:link {
   color: transparent;
-  text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   
 }
