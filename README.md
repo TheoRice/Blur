@@ -5,6 +5,9 @@ Blur: IMDB Episode Blurrer. Hides potential-spoiler information from IMDB.
 ![Cast Image 1](http://theorice.me/resources/blur/credits_1.png?raw=true)
 ![Cast Image 2](http://theorice.me/resources/blur/credits_2.png?raw=true)
 
+## Version 1.3
+*Heavily cleaned up js code to utilize !important css classes
+
 ## Version 1.2
 *Made text blur more effective at hiding content
 *Fixed some minor under-the-hood bugs

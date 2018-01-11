@@ -1,16 +1,9 @@
 .blr_unblurred {
-  color: "";
-  text-shadow: "";
+  color: "" !important;
+  text-shadow: "" !important;
 }
 
 .blr_blurred {
-  color: transparent;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  
-}
-
-.blr_blurred a:link {
-  color: transparent;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  
+  color: transparent !important;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5) !important;
 }

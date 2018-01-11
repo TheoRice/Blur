@@ -1,5 +1,5 @@
 var UNBLURRED = 'blr_unblurred';
-var DEFAULT = 'blr_blurred';
+var BLURRED = 'blr_blurred';
 
 var prevDOM = document.createElement('div');
 
@@ -12,15 +12,11 @@ if (document.readyState === 'loading') {
 function afterDOMLoaded() {
     var epCredits = document.getElementsByClassName("credit");
     for (i = 0; i < epCredits.length; i++) {
-        epCredits[i].style.color = "transparent";
-        epCredits[i].style.textShadow = "0 0 5px rgba(0, 0, 0, 0.5)";
-        epCredits[i].classList.add(DEFAULT);
+        epCredits[i].classList.add(BLURRED);
     };
     var episodes = document.getElementsByClassName("toggle-episodes");
     for (i = 0; i < episodes.length; i++) {
-        episodes[i].style.color = "transparent";
-        episodes[i].style.textShadow = "0 0 5px rgba(0, 0, 0, 0.5)";
-        episodes[i].classList.add(DEFAULT);
+        episodes[i].classList.add(BLURRED);
     };
     var actorEps = document.getElementsByClassName("filmo-episodes");
     for (i = 0; i < actorEps.length; i++) {
@@ -31,21 +27,15 @@ function afterDOMLoaded() {
     };
     document.addEventListener('mousemove', function (e) {
         var srcElement = e.srcElement || e.target;
-        console.log(srcElement);
         if ((prevDOM.className === "toggle-episodes blr_unblurred" && srcElement.className !== "toggle-episodes blr_unblurred") ||
             (prevDOM.className === "credit blr_unblurred" && srcElement.className !== "credit blr_unblurred")) {
             prevDOM.classList.remove(UNBLURRED);
-            prevDOM.classList.add(DEFAULT);
-            prevDOM.style.color = "transparent";
-            prevDom.style.textShadow = "0 0 5px rgba(0, 0, 0, 0.5)";
+            prevDOM.classList.add(BLURRED);
         }
         if (srcElement.className === 'credit blr_blurred' || srcElement.className === 'toggle-episodes blr_blurred') {
-            srcElement.classList.remove(DEFAULT);
+            srcElement.classList.remove(BLURRED);
             srcElement.classList.add(UNBLURRED);
-            srcElement.style.color = "";
-            srcElement.style.textShadow = "";
             prevDOM = srcElement;
         }
-
     }, false);
 }
